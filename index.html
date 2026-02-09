@@ -165,18 +165,6 @@
             font-weight: normal;
         }
 
-        .image-container {
-            margin: 10px 0 15px 0;
-            text-align: center;
-        }
-
-        .position-image {
-            max-width: 100%;
-            height: auto;
-            border: 2px solid #e1e8ed;
-            border-radius: 8px;
-        }
-
         .radio-group {
             display: flex;
             flex-direction: column;
@@ -272,17 +260,14 @@
 
             <div class="form-group">
                 <label>Starting Position</label>
-                <div class="image-container">
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOQAAADdCAYAAACqoYC8AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOwgAADsIBFShKgAAAABl0RVh0U29mdHdhcmUAcGFpbnQubmV0IDQuMC4xNkRpr/UAADPcSURBVHhe7Z0HnFVF2sefm3NO587NuTOTc84ZCEN..." alt="Starting Position Diagram" class="position-image" style="max-width: 300px;">
-                </div>
                 <div class="radio-group">
                     <div class="radio-option">
                         <input type="radio" id="positionCorners" name="startingPosition" value="Corners against Goal" required>
                         <label for="positionCorners" class="radio-label">Corners against Goal</label>
                     </div>
                     <div class="radio-option">
-                        <input type="radio" id="position1" name="startingPosition" value="Position 1" required>
-                        <label for="position1" class="radio-label">Position 1</label>
+                        <input type="radio" id="position1" name="startingPosition" value="High Flight Zone" required>
+                        <label for="position1" class="radio-label">High Flight Zone</label>
                     </div>
                 </div>
             </div>
@@ -357,6 +342,11 @@
                 </div>
             </div>
 
+            <div class="form-group">
+                <label for="comments">Additional Comments</label>
+                <textarea id="comments" name="comments" placeholder="Share any additional observations about this team's performance..." rows="4"></textarea>
+            </div>
+
             <button type="submit" class="btn" id="submitBtn">Submit</button>
         </form>
 
@@ -398,7 +388,8 @@
                 autoMissed: document.getElementById('autoMissed').value,
                 teleopMade: document.getElementById('teleopMade').value,
                 teleopMissed: document.getElementById('teleopMissed').value,
-                parking: document.querySelector('input[name="parking"]:checked').value
+                parking: document.querySelector('input[name="parking"]:checked').value,
+                comments: document.getElementById('comments').value
             };
 
             // Disable submit button
